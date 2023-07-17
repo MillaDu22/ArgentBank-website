@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from "../../../src/assets/img/argentBankLogo.png";
 import "./header.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 function Header() {
 return (
@@ -27,5 +27,4 @@ return (
     </nav>
     );
 }
-
 export default Header;
