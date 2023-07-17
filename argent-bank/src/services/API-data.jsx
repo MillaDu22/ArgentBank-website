@@ -20,31 +20,30 @@ export function getLoginData(data) {
     export function getLoginFetchData(data) {
     if(data.body !== undefined) {
     const obj = {
-    status: data.status,
-    email: data.body.email,
-    firstName: data.body.firstName,
-    lastName: data.body.lastName
+        status: data.status,
+        email: data.body.email,
+        firstName: data.body.firstName,
+        lastName: data.body.lastName
     }
     
     return obj;
     } else {
     const obj = {
-    status: 0,
-    email: "",
-    firstName: "",
-    lastName: ""
+        status: 0,
+        email: "",
+        firstName: "",
+        lastName: ""
     }
     
     return obj;
     }
-    }
+}
     
-    /* Save User Profil Data */
-    export function saveUserProfilData(data) {
+/* Save User Profil Data */
+export function saveUserProfilData(data) {
     const obj = {
-    status: data.status,
-    message: data.message,
+        status: data.status,
+        message: data.message,
     }
-    
     return obj;
-    }
+}
