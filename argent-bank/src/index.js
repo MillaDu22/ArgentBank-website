@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import Router from "./router/router.jsx";
 import { BrowserRouter } from 'react-router-dom';
 import Header from "./components/Header/header.jsx";
-import Footer from "./components/Footer/footer.jsx";
+import Footer from "./components/Footer/index.jsx";
 import { Provider } from 'react-redux';
 import { store } from "./redux/store.jsx";
 
