@@ -25,7 +25,7 @@ function Profil() {
             dispatch(getFirstName(obj.firstName));
             dispatch(getLastName(obj.lastName));
         });
-    }, []);
+    }, [dispatch, token]);
 
     // Edit username
     const handleEdit = () => {

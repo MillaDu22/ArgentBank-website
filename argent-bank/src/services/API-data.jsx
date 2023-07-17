@@ -27,14 +27,14 @@ export function getLoginData(data) {
     }
     
     return obj;
-    } else {
-    const obj = {
-        status: 0,
-        email: "",
-        firstName: "",
-        lastName: ""
-    }
-    
+    } 
+    else {
+        const obj = {
+            status: 0,
+            email: "",
+            firstName: "",
+            lastName: ""
+        }  
     return obj;
     }
 }

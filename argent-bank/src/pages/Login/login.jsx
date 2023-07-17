@@ -20,8 +20,8 @@ const token = useSelector((state) => state.token.value);
 
 // Use Effect
 useEffect(() => {
-    if (token === localStorage.getItem('token')) {
-        ajoutToken(localStorage.getItem('token'));
+    if (token === localStorage.getItem("token")) {
+        ajoutToken(localStorage.getItem("token"));
     }
 });
 
@@ -48,16 +48,16 @@ const handleRemember = (event) => {
 const dispatch = useDispatch();
 const ajoutToken = (token) => {
     if (remember === true) {
-        localStorage.setItem('token', token);
+        localStorage.setItem("token", token);
     }
     dispatch(getToken(token));
 };
 
 // Redirection
 if (
-token !== 0 ||
-loginStatus === 200 ||
-token === localStorage.getItem('token')
+    token !== 0 ||
+    loginStatus === 200 ||
+    token === localStorage.getItem("token")
 )
 return <Navigate to="/account" />;
 
