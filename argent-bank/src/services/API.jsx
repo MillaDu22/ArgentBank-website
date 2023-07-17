@@ -16,13 +16,13 @@ const loginResponse = await fetch(URL_API, {
     return await getLoginData(loginResponse);
     };
     
-    /* See if user is connected */
+    /* if user is connected */
     export const getLoginFetch = async (token) => {
         const URL_API = "http://localhost:3001/api/v1/user/profile";
         const loginFetchResponse = await fetch(URL_API, {
         headers: {
             'Content-Type': "application/json",
-            Authorization: 'Bearer' + token,
+            Authorization: 'Bearer ' + token,
         },
         method: 'POST',
         }).then((response) => response.json());
