@@ -1,4 +1,4 @@
-import {getLoginData, getLoginFetchData, saveUserProfilData} from "./API-Data";
+import {getLoginData, getLoginFetchData, saveUserProfilData} from "./API-data";
     
 /* Get Login */
 export const getLogin = async (identifiants) => {
