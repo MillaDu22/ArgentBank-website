@@ -1,67 +1,62 @@
-/* Account */
-.account {
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid black;
-    box-sizing: border-box;
+.account_wrapper {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+    width: 80%;
     margin: 0 auto;
-    margin-bottom: 2rem;
+    flex-direction: column;
     padding: 1.5rem;
+    box-sizing: border-box;
     text-align: left;
-    width: 80%; 
-    }
+    margin-bottom: 2rem;
+}
     
-    .account-content-wrapper {
-    flex: 1;
+.account_content {
     width: 100%;
-    }
+    flex: 1;
+}
     
-    .account-title {
-    font-size: 1rem;
-    font-weight: normal;
+.account_title {
     margin: 0;
     padding: 0;
-    }
+    font-size: 1rem;
+    font-weight: normal;
+}
     
-    .account-amount {
+.account_amount {
+    margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
+}
+    
+.account_description {
     margin: 0;
     }
     
-    .account-amount-description {
-    margin: 0;
-    }
-    
-    /* Transaction */
-    .transaction-button {
-    background-color: #00bc77;
-    border-color: #00bc77;
-    color: #fff;
+.transaction_button {
     display: block;
+    width: 100%;
+    padding: 8px;
     font-size: 1.1rem;
     font-weight: bold;
     margin-top: 1rem;
-    padding: 8px;
-    width: 100%;
-    }
+    border-color: #77e777;
+    background-color: #77e777;
+    color: white;
+}
     
-    /** Responsive **/
-    @media (min-width: 720px) {
-    .account {
+@media (min-width: 720px) {
+    .account_wrapper {
     flex-direction: row;
     }
     
-    .account-content-wrapper.cta {
+    .account_content.cta {
     flex: 0;
     }
     
-    .transaction-button {
+    .transaction_button {
     width: 200px;
     }
-    }
-    
-    
+}
