@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import EditNamesButton from '../../components/LoginButton/LoginButton';
+import EditNamesButton from '../../components/NameButton/namebutton';
 import Account from '../../components/Account/account';
 import { Link } from 'react-router-dom';
 import './account.css';
@@ -59,7 +59,7 @@ function Profile() {
             ) : (
                 <div className="redirection_wrapper">
                     <h1 className="redirection_text">
-                        You are logged out. <br /> Please sign in to see your personal page.
+                        You are logged out. <br /> Please sign in.
                     </h1>
                     <Link className="redirection_link" to="/login">
                         <h2>&#8594;</h2>
