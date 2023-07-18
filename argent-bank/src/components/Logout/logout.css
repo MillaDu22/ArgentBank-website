@@ -1,0 +1,15 @@
+.logout_link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    }
+    .logout_link:hover {
+    text-decoration: underline;
+    }
+    .logout_link_text {
+    margin: 0;
+    margin-left: 0.3rem;
+    }

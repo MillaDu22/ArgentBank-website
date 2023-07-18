@@ -5,7 +5,7 @@ import './login.css'
 
 
 /**
- * creation composant login page quand l'utilisateur n'est pas connecté
+ * creation page login
  * @returns { React.ReactElement } Login page
  */
 function Login() {
@@ -31,7 +31,7 @@ function Login() {
                </div>
                {hasLoginFailed ? (
                   <div className="error_message">
-                     Wrong e-mail or password, please check again.
+                     Error of email or password.
                   </div>
                ) : (
                   ''

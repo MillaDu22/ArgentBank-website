@@ -7,17 +7,21 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/header.jsx";
 import Footer from "./components/Footer/footer.jsx";
 import { Provider } from 'react-redux';
-import { store } from "./redux/store.jsx";
+import {store, persistor } from '../src/redux/redux.jsx';
+import {PersistGate } from 'redux-persist/integration/react'
+//import { store } from "./redux/store.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <Header />
         <Router />
         <Footer />
       </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
