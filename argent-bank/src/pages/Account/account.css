@@ -37,6 +37,7 @@
 .redirection_text {
     color: white;
     margin: 2rem;
+    text-align: center;
 }
     
 .redirection_link {
@@ -44,8 +45,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color:grey;
+    color:white;
     text-decoration: none;
+    text-align: center;
 }
     
 .signin_text {

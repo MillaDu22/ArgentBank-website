@@ -6,6 +6,10 @@
 }
 
 .login_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     background-color: white;
     width: 300px;
@@ -46,4 +50,5 @@
     color: red;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 }

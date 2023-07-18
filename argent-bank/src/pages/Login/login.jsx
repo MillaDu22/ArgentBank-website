@@ -18,7 +18,7 @@ function Login() {
             <h1>Sign In</h1>
             <form>
                <div className="input_login_wrapper">
-                  <label htmlFor="email">E-mail</label>
+                  <label htmlFor="email">Username</label>
                   <input type="text" id="email" />
                </div>
                <div className="input_login_wrapper">

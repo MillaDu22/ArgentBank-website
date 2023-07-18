@@ -59,7 +59,7 @@ function Profile() {
             ) : (
                 <div className="redirection_wrapper">
                     <h1 className="redirection_text">
-                        You are logged out. <br /> Please sign in.
+                        You are not logged in, <br /> Please identify yourself.
                     </h1>
                     <Link className="redirection_link" to="/login">
                         <h2>&#8594;</h2>
