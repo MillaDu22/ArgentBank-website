@@ -1,9 +1,9 @@
 import "./account.css";
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getLoginFetch, saveUserProfil } from "../../services/API";
-import { getFirstName } from "../../features/User/firstName";
-import { getLastName } from "../../features/User/lastName";
+//import { getLoginFetch, saveUserProfil } from "../../services/API";
+//import { getFirstName } from "../../features/User/firstName";
+//import { getLastName } from "../../features/User/lastName";
 import { Navigate } from 'react-router-dom';
 import Account from "../../components/Account/account";
 

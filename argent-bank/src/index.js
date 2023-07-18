@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Router from "./router/router.jsx";
 import { BrowserRouter } from "react-router-dom";
@@ -9,7 +8,6 @@ import Footer from "./components/Footer/footer.jsx";
 import { Provider } from 'react-redux';
 import {store, persistor } from '../src/redux/redux.jsx';
 import {PersistGate } from 'redux-persist/integration/react'
-//import { store } from "./redux/store.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
