@@ -7,7 +7,8 @@ export function getLoginData(data) {
             token: data.body.token
         }
         return obj;
-    } else {
+    } 
+    else {
         const obj = {
             status: data.status,
             message: data.message,
@@ -22,6 +23,7 @@ export function getLoginData(data) {
     const obj = {
         status: data.status,
         email: data.body.email,
+        password: data.body.password,
         firstName: data.body.firstName,
         lastName: data.body.lastName
     }

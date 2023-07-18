@@ -1,0 +1,49 @@
+.login_wrapper {
+    flex: 1;
+    box-sizing: border-box;
+    padding: 3rem;
+    background-color:#12002b ;
+}
+
+.login_content {
+    box-sizing: border-box;
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.login_icon {
+    size: 5rem;
+}
+
+.input_login_wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.input_login_wrapper input {
+    padding: 3px;
+    font-size: 1.2rem;
+}
+
+.input_login_wrapper label {
+    font-weight: bold;
+}
+
+.remember_wrapper {
+    display: flex;
+}
+
+.remember_wrapper label {
+    margin-left: 0.25rem;
+}
+
+.error_message {
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+}

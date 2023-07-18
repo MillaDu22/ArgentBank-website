@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from "../pages/Home/home";
-import Error from "../pages/Error/Error";
+//import Error from "../pages/Error/Error";
 import Account from "../pages/Account/account";
 import Login from "../pages/Login/login";
 import Logout from "../pages/Logout/logout";
@@ -14,7 +14,7 @@ const Router = () => {
             <Route path="account" element={<Account />} />
             <Route path="login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="*" element={<Error />} />
+            {/*<Route path="*" element={<Error />} />*/}
         </Routes>
     );
 };

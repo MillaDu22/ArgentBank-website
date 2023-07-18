@@ -1,98 +1,45 @@
 import React from 'react';
-import "../../assets/main.css";
-import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getLogin } from "../../services/API";
-import { getToken } from "../../features/Token/token";
-import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import LoginButton from '../../components/LoginButton/LoginButton';
+import './login.css'
 
+
+/**
+ * creation composant login page quand l'utilisateur n'est pas connecté
+ * @returns { React.ReactElement } Login page
+ */
 function Login() {
-// Use State
-let [loginErreur, setLoginErreur] = useState("");
-let [loginStatus, setLoginStatus] = useState(0);
+   const hasLoginFailed = useSelector((state) => state.hasLoginFailed);
 
-let [email, setEmail] = useState("");
-let [password, setPassword] = useState("");
-let [remember, setRemember] = useState(false);
-
-// Use Selector
-const token = useSelector((state) => state.token.value);
-
-// Use Effect
-useEffect(() => {
-    if (token === localStorage.getItem("token")) {
-        ajoutToken(localStorage.getItem("token"));
-    }
-});
-
-// Handle Submit
-const handleSubmit = (event) => {
-    event.preventDefault();
-    const login = getLogin({ email: email, password: password });
-    login.then((obj) => {
-        if (obj.status !== 400) {
-            setLoginStatus(obj.status);
-            ajoutToken(obj.token);
-        } else {
-            setLoginErreur(obj.message);
-        }
-    });
-};
-
-// Handle Remember
-const handleRemember = (event) => {
-    setRemember(event.target.checked);
-    };
-
-// Add the token
-const dispatch = useDispatch();
-const ajoutToken = (token) => {
-    if (remember === true) {
-        localStorage.setItem("token", token);
-    }
-    dispatch(getToken(token));
-};
-
-// Redirection
-if (
-    token !== 0 ||
-    loginStatus === 200 ||
-    token === localStorage.getItem("token")
-)
-return <Navigate to="/account" />;
-
-return (
-    <main className="bg-dark">
-        <section className="sign-in-content">
-            <i className="fa fa-user-circle sign-in-icon"></i>
+   return (
+      <main className="login_wrapper">
+            <section className="login_content">
+            <i className="fa fa-user-circle login_icon"></i>
             <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <div className="input-wrapper">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="input-wrapper">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className="input-remember">
-                    <input type="checkbox" id="remember-me" onChange={handleRemember} />
-                    <label htmlFor="remember-me">Remember me</label>
-                </div>
-                <div>{loginErreur}</div>
-                <button className="sign-in-button">Sign In</button>
+            <form>
+               <div className="input_login_wrapper">
+                  <label htmlFor="email">E-mail</label>
+                  <input type="text" id="email" />
+               </div>
+               <div className="input_login_wrapper">
+                  <label htmlFor="password">Password</label>
+                  <input type="password" id="password" autoComplete="off" />
+               </div>
+               <div className="remember_wrapper">
+                  <input type="checkbox" id="remember" />
+                  <label htmlFor="remember">Remember me</label>
+               </div>
+               {hasLoginFailed ? (
+                  <div className="error_message">
+                     Wrong e-mail or password, please check again.
+                  </div>
+               ) : (
+                  ''
+               )}
+               <LoginButton />
             </form>
-    </section>
-</main>
-);
+         </section>
+      </main>
+   );
 }
-
 export default Login;
