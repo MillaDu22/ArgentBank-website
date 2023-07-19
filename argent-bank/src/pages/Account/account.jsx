@@ -10,7 +10,6 @@ import './account.css';
 * @returns { React.ReactElement } profil utilisateur
 */
 function Profile() {
-    const userName = useSelector((state) => state.auth.userName);
     const firstName = useSelector((state) => state.auth.firstName);
     const lastName = useSelector((state) => state.auth.lastName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
