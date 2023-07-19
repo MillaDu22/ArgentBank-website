@@ -23,12 +23,15 @@ export function loginAction(navigate) {
     return (dispatch) => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        const body = JSON.stringify({ 'email': email, 'password': password });
+        const body = JSON.stringify({ "email": email, "password": password });
 
         /* Method post  /user/login pour obtenir le token*/
         fetch('http://localhost:3001/api/v1/user/login', {
             body: body,
-            headers : { 'Content-Type': 'application/json' },
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             method: "POST"
         })
         .then(response => {
@@ -53,7 +56,7 @@ export function loginAction(navigate) {
         })
         .then(response => {
             dispatch(loginSuccessAction(response.body, token));
-            navigate("/profile");
+            navigate("/Account");
         })
         .catch(function(error) {
             dispatch(loginFailureAction(error));
@@ -99,10 +102,10 @@ export function editNamesAction() {
 
 export function changeNamesAction() {
     return (dispatch) => {
-
+    const userName= document.getElementById('username').value
     const firstName = document.getElementById('firstname').value;
     const lastName = document.getElementById('lastname').value;
-    const body = JSON.stringify({ 'firstName': firstName, 'lastName': lastName });
+    const body = JSON.stringify({ 'userName': userName, 'firstName': firstName, 'lastName': lastName });
     const token = localStorage.getItem('token');
 
     /* Method put /user/profile pour modifier le nom*/
@@ -124,6 +127,7 @@ export function changeNamesAction() {
             type: "CHANGE_NAMES_ACTION",
             payload: { firstName, lastName }
         })
+        localStorage.setItem('userName', userName)
         localStorage.setItem('firstName', firstName);
         localStorage.setItem('lastName', lastName);
     })

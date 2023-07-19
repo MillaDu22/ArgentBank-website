@@ -10,6 +10,7 @@ import './account.css';
 * @returns { React.ReactElement } profil utilisateur
 */
 function Profile() {
+    const userName = useSelector((state) => state.auth.userName);
     const firstName = useSelector((state) => state.auth.firstName);
     const lastName = useSelector((state) => state.auth.lastName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -18,14 +19,24 @@ function Profile() {
     return (
         <main className="profile_wrapper">
             {isLoggedIn ? (
-                <div>
+                <div className="center-box-profile">
                     <div className="welcome_wrapper">
                         <h1 className="welcome_text">Welcome back</h1>
                         {isNameEdited ? (
-                            <div>
+                            <div className ="form-edit-name">
                                 <div className="input_name_wrapper">
-                                    <input className="input_name" type="text" id="firstname" defaultValue={firstName} />
-                                    <input className="input_name" type="text" id="lastname" defaultValue={lastName} />
+                                    <div>
+                                        <label htmlFor='username' className="label-form">Username</label>
+                                        <input className="input_name_user" type="text" id="username" defaultValue="Iron" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='firstname' className="label-form">Firstname</label>
+                                        <input className="input_name" type="text" id="firstname" defaultValue={firstName} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='lastName' className="label-form">Lastname</label>
+                                        <input className="input_name" type="text" id="lastname" defaultValue={lastName} />
+                                    </div>
                                 </div>
                                 <div className="button_wrapper">
                                     <EditNamesButton title="Save" />
