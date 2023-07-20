@@ -21,7 +21,7 @@ function Header() {
         </Link>
         {isLoggedIn ? (
             <nav className="nav">
-                <Link className="nav_item" to="/profile">
+                <Link className="nav_item" to="/account">
                     <i className="fa fa-user-circle"></i>
                     <p className="nav_item_text">{firstName}</p>
                 </Link>
