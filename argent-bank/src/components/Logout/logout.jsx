@@ -5,11 +5,6 @@ import { useDispatch } from 'react-redux';
 import { logoutAction } from '../../redux/redux';
 import './logout.css';
 
-/**
- * React component to create a logout link updating Redux state when clicked
- * @param { {to: String} } props - to: redirection page
- * @returns { React.ReactElement } LogoutLink component
- */
 function LogoutLink(props) {
     const dispatch = useDispatch();
     return (

@@ -5,10 +5,6 @@ import { loginAction } from '../../redux/redux';
 import './loginButton.css';
 
 
-/**
- * creation bouton updating state redux quand il est clické
- * @returns { React.ReactElement } LoginButton composant
- */
 function LoginButton() {
     const dispatch = useDispatch();
     const navigate = useNavigate();

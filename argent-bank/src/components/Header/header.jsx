@@ -5,10 +5,7 @@ import logo from '../../assets/img/argentBankLogo.png';
 import LogoutLink from '../Logout/logout';
 import './header.css';
 
-/**
- * Creation header
- * @returns { React.ReactElement } Header component
- */
+
 function Header() {
     const firstName = useSelector((state) => state.auth.firstName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);

@@ -3,11 +3,6 @@ import { useSelector } from 'react-redux';
 import LoginButton from '../../components/LoginButton/LoginButton';
 import './login.css'
 
-
-/**
- * creation page login
- * @returns { React.ReactElement } Login page
- */
 function Login() {
    const hasLoginFailed = useSelector((state) => state.hasLoginFailed);
 

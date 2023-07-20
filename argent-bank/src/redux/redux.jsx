@@ -25,7 +25,7 @@ export function loginAction(navigate) {
         const password = document.getElementById('password').value;
         const body = JSON.stringify({ "email": email, "password": password });
 
-        /* Method post  /user/login pour obtenir le token*/
+        /* Method post  /user/login pour token*/
         fetch('http://localhost:3001/api/v1/user/login', {
             body: body,
             headers : { 

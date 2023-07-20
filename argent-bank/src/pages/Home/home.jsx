@@ -5,10 +5,7 @@ import securityIcon from '../../assets/img/icon-security.png';
 import Feature from '../../components/Feature/feature';
 import './home.css';
 
-/**
-* Creation homePage
-* @returns { React.ReactElement } HomePage
-*/
+
 function Home() {
     return (
         <main className="home_wrapper">

@@ -5,10 +5,7 @@ import Account from '../../components/Account/account';
 import { Link } from 'react-router-dom';
 import './account.css';
 
-/**
-* Creation page profil utilisateur
-* @returns { React.ReactElement } profil utilisateur
-*/
+
 function Profile() {
     const firstName = useSelector((state) => state.auth.firstName);
     const lastName = useSelector((state) => state.auth.lastName);

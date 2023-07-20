@@ -4,11 +4,6 @@ import { useDispatch } from 'react-redux';
 import { changeNamesAction, editNamesAction } from '../../redux/redux';
 import './nameButton.css';
 
-/**
-* Creation bouton modifName, state, redux
-* @param { {title: String} } props – title:  texte
-* @returns { React.ReactElement } NameButton composant
-*/
 function EditNamesButton(props) {
     const dispatch = useDispatch();
 
