@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/img/argentBankLogo.png';
+import logo from '../../assets/img/argentBankLogo.webp';
 import LogoutLink from '../Logout/logout';
 import './header.css';
 
@@ -14,7 +14,6 @@ function Header() {
         <header className="header">
         <Link className="header_link" to="/">
             <img className="header_logo" src={logo} alt="Argent Bank Logo" />
-            <h1 className="sr-only">Argent Bank</h1>
         </Link>
         {isLoggedIn ? (
             <nav className="nav">

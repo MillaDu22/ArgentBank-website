@@ -9,10 +9,13 @@
 }
     
 .feature_icon {
+    height:100px;
     width: 100px;
+    object-fit:cover;
     border: 10px solid #00bc77;
     border-radius: 50%;
     padding: 1rem;
+
 }
 
 .feature_title {
