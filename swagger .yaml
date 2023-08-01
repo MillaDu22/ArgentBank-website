@@ -1,0 +1,175 @@
+swagger: '2.0'
+info:
+  title: ArgentBank API documentation
+  description: >-
+    Contains API endpoints for the new transaction feature (added to the
+    previously described endpoints)
+  version: 1.1.0
+  termsOfService: http://swagger.io/terms/
+host: localhost:3001
+basePath: /api/v2
+schemes:
+  - http
+paths:
+  /users/{id}/accounts:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Account Transactions API
+      description: API for fetching user transactions on a specific account
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Numeric ID of the account to get
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User accounts retrieved successully
+          schema:
+            $ref: '#/definitions/AccountTransactionsResponse'
+        '403':
+          description: >-
+            The connected user does not have the right to see the requested
+            resources
+        '404':
+          description: User with id {id} does not exist
+        '500':
+          description: Internal Server Error
+  /account/{id}/transactions:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Transaction API
+      description: API for fetching a specific user transaction
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Numeric ID of the transaction to get
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User transaction retrieved successully
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+        '403':
+          description: >-
+            The connected user does not have the right to see the requested
+            resources
+        '404':
+          description: The account of id {id} does not exist
+        '500':
+          description: Internal Server Error
+  /transactions/{id}:
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: User Transaction API
+      description: API for updating details on a specific user transaction
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Numeric ID of the transaction to get
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: Update user transaction attributes
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User transaction retrieved successully
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+        '400':
+          description: Invalid parameters
+        '403':
+          description: >-
+            The connected user does not have the right to modify this
+            transaction
+        '404':
+          description: Transaction with id {id} does not exist
+        '500':
+          description: Internal Server Error
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  Transaction:
+    properties:
+      category:
+        type: string
+        description: transaction category (to choose among several possibilities)
+      notes:
+        type: string
+        description: transaction notes by the user
+  AccountTransactionsResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+  TransactionResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: array
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+            recipient:
+              type: string
+            amount:
+              type: number
+            newAccountBalance:
+              type: string
+            category:
+              type: string
+            notes:
+              type: string
