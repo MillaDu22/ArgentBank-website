@@ -26,7 +26,7 @@ export function loginAction(navigate) {
         const password = document.getElementById('password').value;
         const body = JSON.stringify({ "email": email, "password": password });
 
-        /* Method post  /user/login pour token*/
+        /*Method post  /user/login pour token*/
         fetch('http://localhost:3001/api/v1/user/login', {
             body: body,
             headers : { 
@@ -42,7 +42,7 @@ export function loginAction(navigate) {
         })
         .then(response => {
         const token = response.body.token;
-        /* Method post  /user/profile pour obtenir les datas avec token*/
+        /*Method post  /user/profile pour obtenir les datas avec token*/
         fetch("http://localhost:3001/api/v1/user/profile", {
             headers: {
                 'Authorization': 'Bearer' + response.body.token,
@@ -77,27 +77,27 @@ export function loginSuccessAction(body, token) {
         payload: { body, token }
     }
 }
-
+//console error
 export function loginFailureAction(error) {
     console.log("Error at fetch:", error.message);
     return {
         type: "LOGIN_FAILURE_ACTION"
     }
 }
-
+//vide le localStorage
 export function logoutAction() {
     localStorage.clear();
     return {
         type: "LOGOUT_ACTION"
     }
 }
-
+//affichage form mofif du userName
 export function editNamesAction() {
     return {
         type: "EDIT_NAMES_ACTION"
     }
 }
-
+//modification du userName
 export function changeNamesAction() {
     return (dispatch) => {
     const userName = document.getElementById('username').value;
@@ -153,21 +153,25 @@ function reducer(state = initialState, action) {
             hasLoginFailed: false
             }
         }
+        //échec de la onnexion
         case "LOGIN_FAILURE_ACTION": {
             return {
             ...state,
             hasLoginFailed: true
             }
         }
+        //déconnexion
         case "LOGOUT_ACTION": {
             return initialState
         }
+        //édition du nom (affichage formulaire)
         case "EDIT_NAMES_ACTION": {
             return {
             ...state,
             nameEditionForm: !state.nameEditionForm
             }
         }
+        //Modification du nom, préparation à une éventuelle demande d'affichage du userName dans la page account(message de bienvenue)
         case "CHANGE_NAMES_ACTION": {
             return {
                 ...state,
@@ -184,14 +188,14 @@ function reducer(state = initialState, action) {
     }
 }
 
-// Pour rester connecté au rafraichissement de la page
+// Configuration de la persistance pour rester connecté au rafraichissement de la page: redux-persist
 const persistConfig = {
     key: 'root',
     storage,
 }
 
 const persistedReducer = persistReducer(persistConfig, reducer)
-
+// configuration store: redux-toolkit
 export const store = configureStore({
     reducer: persistedReducer, 
     middleware: (getDefaultMiddleware) =>
