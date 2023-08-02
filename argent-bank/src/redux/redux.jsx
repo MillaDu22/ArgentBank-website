@@ -15,7 +15,7 @@ const initialState = {
     },
     isLoggedIn: false,
     hasLoginFailed: false,
-    isNameEdited: false
+    nameEditionForm: false
 };
 
 /* --------------- Actions ---------------*/
@@ -165,7 +165,7 @@ function reducer(state = initialState, action) {
         case "EDIT_NAMES_ACTION": {
             return {
             ...state,
-            isNameEdited: !state.isNameEdited
+            nameEditionForm: !state.nameEditionForm
             }
         }
         case "CHANGE_NAMES_ACTION": {

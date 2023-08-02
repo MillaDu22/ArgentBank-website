@@ -11,7 +11,7 @@ function Profile() {
     const firstName = useSelector((state) => state.auth.firstName);
     const lastName = useSelector((state) => state.auth.lastName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
-    const isNameEdited = useSelector((state) => state.isNameEdited);
+    const nameEditionForm = useSelector((state) => state.nameEditionForm);
 
     return (
         <main className="profile_wrapper">
@@ -19,7 +19,7 @@ function Profile() {
                 <div className="center-box-profile">
                     <div className="welcome_wrapper">
                         <h1 className="welcome_text">Welcome back</h1>
-                        {isNameEdited ? (
+                        {nameEditionForm ? (
                             <div className ="form-edit-name">
                                 <div className="input_name_wrapper">
                                     <div>
@@ -70,9 +70,7 @@ function Profile() {
                         You are not logged in, <br /> Please identify yourself.
                     </h1>
                     <Link className="redirection_link" to="/login">
-                        <h2>&#8594;</h2>
                         <h2 className="signin_text">Sign In</h2>
-                        <h2>&#8592;</h2>
                     </Link>
                 </div>
             )}
