@@ -47,7 +47,10 @@
     font-size: 18px;
 }
 .input_name_user {
-    background: lightgrey;
+    background: white;
+}
+.input_name {
+    background: lightgray;
 }
     
 .name_text {

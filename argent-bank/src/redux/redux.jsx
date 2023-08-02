@@ -8,6 +8,7 @@ const initialState = {
     auth: {
         id: '',
         email: '',
+        userName:'',
         firstName: '',
         lastName: '',
         token: ''
@@ -70,9 +71,6 @@ export function loginAction(navigate) {
 
 export function loginSuccessAction(body, token) {
     localStorage.setItem('id', body.id);
-    localStorage.setItem('email', body.email);
-    localStorage.setItem('firstName', body.firstName);
-    localStorage.setItem('lastName', body.lastName);
     localStorage.setItem('token', token);
     return {
         type: "LOGIN_SUCCESS_ACTION",
@@ -102,9 +100,10 @@ export function editNamesAction() {
 
 export function changeNamesAction() {
     return (dispatch) => {
+    const userName = document.getElementById('username').value;
     const firstName = document.getElementById('firstname').value;
     const lastName = document.getElementById('lastname').value;
-    const body = JSON.stringify({'firstName': firstName, 'lastName': lastName });
+    const body = JSON.stringify({userName: userName, firstName: firstName, lastName: lastName});
     const token = localStorage.getItem('token');
 
     /* Method put /user/profile pour modifier le nom*/
@@ -124,10 +123,8 @@ export function changeNamesAction() {
     .then(data => {
         dispatch({
             type: "CHANGE_NAMES_ACTION",
-            payload: { firstName, lastName }
+            payload: { userName, firstName, lastName }
         })
-        localStorage.setItem('firstName', firstName);
-        localStorage.setItem('lastName', lastName);
     })
     .catch(function(error) {
         console.log("Error at fetch:" + error.message);
@@ -137,12 +134,7 @@ export function changeNamesAction() {
 
 /*--------------- Reducer ---------------*/
 
-/**
- * Reducer function (Redux)
- * @param { Array } state - Global state
- * @param { Object } action - Action
- * @returns { Array } Updated global state
- */
+
 function reducer(state = initialState, action) {
     switch (action.type) {
         case "LOGIN_SUCCESS_ACTION": {
@@ -152,6 +144,7 @@ function reducer(state = initialState, action) {
                 ...state.auth,
                 id: action.payload.body.id,
                 email: action.payload.body.email,
+                userName: action.payload.body.userName,
                 firstName: action.payload.body.firstName,
                 lastName: action.payload.body.lastName,
                 token: action.payload.token,
@@ -180,6 +173,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 auth: {
                 ...state.auth,
+                userName: action.payload.userName,
                 firstName: action.payload.firstName,
                 lastName: action.payload.lastName
                 }

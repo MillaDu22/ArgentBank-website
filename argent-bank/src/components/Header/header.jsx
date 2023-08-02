@@ -7,7 +7,7 @@ import './header.css';
 
 
 function Header() {
-    const firstName = useSelector((state) => state.auth.firstName);
+    const userName = useSelector((state) => state.auth.userName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
 
     return (
@@ -19,7 +19,7 @@ function Header() {
             <nav className="nav">
                 <Link className="nav_item" to="/account">
                     <i className="fa fa-user-circle"></i>
-                    <p className="nav_item_text">{firstName}</p>
+                    <p className="nav_item_text">{userName}</p>
                 </Link>
                 <LogoutLink to="/" />
             </nav>
