@@ -1,7 +1,7 @@
 import React from 'react';
-import chatIcon from '../../assets/img/icon-chat.webp';
-import moneyIcon from '../../assets/img/icon-money.webp';
-import securityIcon from '../../assets/img/icon-security.webp';
+import chatIcon from '../../assets/img/icon-chat1.webp';
+import moneyIcon from '../../assets/img/icon-money1.webp';
+import securityIcon from '../../assets/img/icon-security1.webp';
 import Feature from '../../components/Feature/feature';
 import './home.css';
 
