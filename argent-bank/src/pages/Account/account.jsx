@@ -42,7 +42,7 @@ function Profile() {
                             </div>
                         ) : (
                             <div>
-                                <h1 className="name_text">{firstName + ' ' + lastName + '!'}</h1>
+                                <h1 className="name_text">{userName + ' ' + lastName + '!'}</h1>
                                 <EditNamesButton title="Edit Name" />
                             </div>
                         )}
