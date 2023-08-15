@@ -23,15 +23,15 @@ function Profile() {
                             <div className ="form-edit-name">
                                 <div className="input_name_wrapper">
                                     <div>
-                                        <label htmlFor='username' className="label-form">Username</label>
+                                        <label htmlFor='username' className="label-form">User name</label>
                                         <input className="input_name_user" type="text" id="username" defaultValue={userName} />
                                     </div>
                                     <div>
-                                        <label htmlFor='firstname' className="label-form">Firstname</label>
+                                        <label htmlFor='firstname' className="label-form">First name</label>
                                         <input className="input_name" type="text" id="firstname" defaultValue={firstName} />
                                     </div>
                                     <div>
-                                        <label htmlFor='lastName' className="label-form">Lastname</label>
+                                        <label htmlFor='lastName' className="label-form">Last name</label>
                                         <input className="input_name" type="text" id="lastname" defaultValue={lastName} />
                                     </div>
                                 </div>
