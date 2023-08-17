@@ -1,9 +1,8 @@
 swagger: '2.0'
 info:
-  title: ArgentBank API documentation
+  title: ArgentBank transactions API documentation
   description: >-
-    Contains API endpoints for the new transaction feature (added to the
-    previously described endpoints)
+    Contains API endpoints for the new transaction feature
   version: 1.1.0
   termsOfService: http://swagger.io/terms/
 host: localhost:3001
@@ -161,6 +160,8 @@ definitions:
         items:
           type: object
           properties:
+            id:
+              type: integer
             date:
               type: string
             recipient:
