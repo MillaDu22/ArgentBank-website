@@ -19,6 +19,8 @@
 }
     
 .account_title {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -26,16 +28,21 @@
 }
     
 .account_amount {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
 }
     
 .account_description {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
     margin: 0;
-    }
+}
     
 .transaction_button {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     display: block;
     width: 100%;
     padding: 8px;

@@ -17,8 +17,21 @@
     padding: 2rem;
 }
 
-.login_icon {
+.fa-user-circle.login_icon {
+    color:#2c3e50cf;
     size: 5rem;
+}
+
+.form-title {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
+    font-weight:600;
+}
+
+.label-form {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
+    font-weight:500;
 }
 
 .input_login_wrapper {
@@ -46,6 +59,7 @@
 }
 
 .error_message {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     margin-top: 10px;
     color: red;
     font-size: 16px;

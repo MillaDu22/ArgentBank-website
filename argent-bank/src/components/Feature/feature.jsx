@@ -7,7 +7,7 @@ function Feature(props) {
         <div className="feature_wrapper">
             <img className="feature_icon" src={props.icon} alt={props.iconType} />
             <h3 className="feature_title">{props.title}</h3>
-            <p>{props.description}</p>
+            <p className ="feature_p">{props.description}</p>
         </div>
     );
 }

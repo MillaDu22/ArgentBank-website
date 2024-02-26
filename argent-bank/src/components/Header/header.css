@@ -9,6 +9,7 @@
     }
     
     .header a {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     font-weight: bold;
     color: #2c3e50;
     }
@@ -50,6 +51,8 @@
     }
     
     .nav_item_text {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color:#2c3e50;
     margin: 0;
     margin-left: 0.3rem;
     }

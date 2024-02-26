@@ -7,7 +7,6 @@ import './account.css';
 
 
 function Profile() {
-    const userName = useSelector ((state) => state.auth.userName);
     const firstName = useSelector((state) => state.auth.firstName);
     const lastName = useSelector((state) => state.auth.lastName);
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -24,7 +23,7 @@ function Profile() {
                                 <div className="input_name_wrapper">
                                     <div>
                                         <label htmlFor='username' className="label-form">User name</label>
-                                        <input className="input_name_user" type="text" id="username" defaultValue={userName} />
+                                        <input className="input_name_user" type="text" id="username" defaultValue= 'Iron' />
                                     </div>
                                     <div>
                                         <label htmlFor='firstname' className="label-form">First name</label>
@@ -42,7 +41,7 @@ function Profile() {
                             </div>
                         ) : (
                             <div>
-                                <h1 className="name_text">{userName + ' ' + lastName + '!'}</h1>
+                                <h1 className="name_text">{firstName + ' ' + lastName + '!'}</h1>
                                 <EditNamesButton title="Edit Name" />
                             </div>
                         )}
